@@ -4,9 +4,11 @@ namespace StepsStatistic.Views
 {
     public partial class StatisticWindow : Window
     {
-        public StatisticWindow()
+        public StatisticWindow(object dataContext)
         {
             InitializeComponent();
+
+            DataContext = dataContext;
         }
     }
 }

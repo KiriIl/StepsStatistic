@@ -1,4 +1,5 @@
-﻿using StepsStatistic.Views;
+﻿using StepsStatistic.ViewModels;
+using StepsStatistic.Views;
 using System.Windows;
 
 namespace StepsStatistic
@@ -8,7 +9,8 @@ namespace StepsStatistic
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            MainWindow = new StatisticWindow();
+            StatisticViewModel statisticViewModel = new StatisticViewModel();
+            MainWindow = new StatisticWindow(statisticViewModel);
             MainWindow.Show();
         }
     }
