@@ -6,4 +6,33 @@
         xmlns:local="clr-namespace:StepsStatistic.Views"
         mc:Ignorable="d"
         Title="Steps statistic" Height="500" Width="900">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="0"
+                  Grid.Column="0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name"
+                                    DisplayMemberBinding="{Binding User}"/>
+                    <GridViewColumn Header="Avg steps"
+                                    DisplayMemberBinding="{Binding AvgSteps, StringFormat=\{0:F2\}}"/>
+                    <GridViewColumn Header="Best result"
+                                    DisplayMemberBinding="{Binding BestResult}"/>
+                    <GridViewColumn Header="Worst result"
+                                    DisplayMemberBinding="{Binding WorstResult}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Grid.Row="1">
+            <Button Content="Select files"/>
+            <Button Content="Save"/>
+        </StackPanel>
+    </Grid>
 </Window>
