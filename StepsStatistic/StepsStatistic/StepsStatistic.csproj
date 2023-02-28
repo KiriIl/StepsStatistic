@@ -134,6 +134,7 @@
     </Compile>
     <Compile Include="Models\StatModel.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Services\Abstraction\IDialogService.cs" />
     <Compile Include="Services\Abstraction\ISerializerService.cs" />
     <Compile Include="Utils\FilePath.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
