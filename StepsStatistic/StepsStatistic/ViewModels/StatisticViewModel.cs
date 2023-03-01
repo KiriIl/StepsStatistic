@@ -1,5 +1,8 @@
-﻿using StepsStatistic.Models;
+﻿using StepsStatistic.Commands;
+using StepsStatistic.Models;
+using StepsStatistic.Services.Abstraction;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace StepsStatistic.ViewModels
 {
@@ -7,6 +10,7 @@ namespace StepsStatistic.ViewModels
     {
         private ObservableCollection<UserModel> _users;
 
+        public ICommand OpenFilesCommand { get; }
         public ObservableCollection<UserModel> Users
         {
             get => _users;
@@ -17,9 +21,12 @@ namespace StepsStatistic.ViewModels
             }
         }
 
-        public StatisticViewModel()
+        public StatisticViewModel(
+            IDialogService dialogService,
+            ISerializerService<UserModel> serializer)
         {
             _users = new ObservableCollection<UserModel>();
+            OpenFilesCommand = new OpenFilesCommand(this, dialogService, serializer);
         }
     }
 }

@@ -138,6 +138,7 @@
     <Compile Include="AutoMapper\AutoMapperProfile.cs" />
     <Compile Include="Commands\BaseAsyncCommand.cs" />
     <Compile Include="Commands\BaseCommand.cs" />
+    <Compile Include="Commands\OpenFilesCommand.cs" />
     <Compile Include="Models\StatModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Services\Abstraction\BaseJsonSerializer.cs" />

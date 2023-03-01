@@ -31,7 +31,8 @@
             </ListView.View>
         </ListView>
         <StackPanel Grid.Row="1">
-            <Button Content="Select files"/>
+            <Button Content="Select files"
+                    Command="{Binding OpenFilesCommand}"/>
             <Button Content="Save"/>
         </StackPanel>
     </Grid>
