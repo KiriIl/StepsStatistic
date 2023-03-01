@@ -16,7 +16,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <ListView Grid.Row="0"
-                  Grid.Column="0">
+                  Grid.Column="0"
+                  ItemsSource="{Binding Users}"
+                  SelectedItem="{Binding SelectedUser}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name"
@@ -33,7 +35,9 @@
         <StackPanel Grid.Row="1">
             <Button Content="Select files"
                     Command="{Binding OpenFilesCommand}"/>
-            <Button Content="Save"/>
+            <Button Content="Save"
+                    Command="{Binding SaveFileCommand}"
+                    CommandParameter="{Binding SelectedUser}"/>
         </StackPanel>
     </Grid>
 </Window>

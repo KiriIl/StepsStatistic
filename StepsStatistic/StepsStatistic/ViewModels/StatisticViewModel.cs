@@ -9,14 +9,25 @@ namespace StepsStatistic.ViewModels
     public class StatisticViewModel : BaseViewModel
     {
         private ObservableCollection<UserModel> _users;
+        private UserModel _selectedUser;
 
         public ICommand OpenFilesCommand { get; }
+        public ICommand SaveFileCommand { get; }
         public ObservableCollection<UserModel> Users
         {
             get => _users;
             set
             {
                 _users = value;
+                OnPropertyChanged();
+            }
+        }
+        public UserModel SelectedUser
+        {
+            get => _selectedUser;
+            set
+            {
+                _selectedUser = value;
                 OnPropertyChanged();
             }
         }
@@ -27,6 +38,7 @@ namespace StepsStatistic.ViewModels
         {
             _users = new ObservableCollection<UserModel>();
             OpenFilesCommand = new OpenFilesCommand(this, dialogService, serializer);
+            SaveFileCommand = new SaveFileCommand(dialogService, serializer);
         }
     }
 }
