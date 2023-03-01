@@ -141,6 +141,7 @@
     <Compile Include="Services\Abstraction\BaseJsonSerializer.cs" />
     <Compile Include="Services\Abstraction\IDialogService.cs" />
     <Compile Include="Services\Abstraction\ISerializerService.cs" />
+    <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\UserSerializer.cs" />
     <Compile Include="Utils\FilePath.cs" />
     <Compile Include="Utils\UserJson.cs" />
