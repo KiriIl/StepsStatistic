@@ -34,6 +34,7 @@ namespace StepsStatistic.Services
             using (JsonTextReader reader = new JsonTextReader(new StreamReader(filePath.FullPath)))
             {
                 userStats = JsonSerializer.Deserialize<List<UserJson>>(reader);
+                userStats.ForEach(user => user.Article = filePath.FileName);
             }
 
             return _mapper.Map<IEnumerable<UserModel>>(userStats);

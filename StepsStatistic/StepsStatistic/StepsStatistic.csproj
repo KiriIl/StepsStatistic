@@ -150,6 +150,7 @@
     <Compile Include="Utils\FilePath.cs" />
     <Compile Include="Utils\UserJson.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ChartViewModel.cs" />
     <Compile Include="ViewModels\StatisticViewModel.cs" />
     <Compile Include="Views\ChartControl.xaml.cs">
       <DependentUpon>ChartControl.xaml</DependentUpon>
