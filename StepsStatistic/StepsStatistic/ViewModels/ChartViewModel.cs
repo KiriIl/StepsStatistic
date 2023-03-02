@@ -64,14 +64,14 @@ namespace StepsStatistic.ViewModels
             ChartPoint<StatModel, BezierPoint<CircleGeometry>, LabelGeometry> point,
             UserModel model)
         {
-            return point.Model.Steps >= model.BestResult;
+            return point.Model.Steps <= model.WorstResult;
         }
 
         private bool HighPointsPredicate(
             ChartPoint<StatModel, BezierPoint<CircleGeometry>, LabelGeometry> point,
             UserModel model)
         {
-            return point.Model.Steps <= model.BestResult;
+            return point.Model.Steps >= model.BestResult;
         }
     }
 }
