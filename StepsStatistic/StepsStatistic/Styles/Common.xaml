@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF">
+
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Width" Value="auto"/>
+    </Style>
+
+    <Style TargetType="{x:Type ListView}">
+        <Setter Property="MinWidth" Value="300"/>
+        <Setter Property="MaxWidth" Value="400"/>
+    </Style>
+
+    <Style TargetType="{x:Type lvc:CartesianChart}">
+        <Setter Property="TooltipFindingStrategy" Value="CompareAll"/>
+        <Setter Property="LegendPosition" Value="Top"/>
+        <Setter Property="LegendTextSize" Value="16"/>
+    </Style>
+</ResourceDictionary>
