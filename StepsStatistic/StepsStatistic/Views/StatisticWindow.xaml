@@ -32,6 +32,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <local:ChartControl Grid.Column="1"
+                            Grid.RowSpan="2"/>
         <StackPanel Grid.Row="1">
             <Button Content="Select files"
                     Command="{Binding OpenFilesCommand}"/>
