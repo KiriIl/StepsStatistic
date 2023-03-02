@@ -39,6 +39,7 @@ namespace StepsStatistic
             services.AddSingleton<IDialogService, DialogService>();
             services.AddSingleton<ISerializerService<UserModel>, UserSerializer>();
             services.AddSingleton<StatisticViewModel>();
+            services.AddSingleton<ChartViewModel>();
             services.AddSingleton(serviceProvider => new StatisticWindow(serviceProvider.GetService<StatisticViewModel>()));
         }
     }

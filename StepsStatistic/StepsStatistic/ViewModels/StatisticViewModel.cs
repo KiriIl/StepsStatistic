@@ -1,6 +1,7 @@
 ﻿using StepsStatistic.Commands;
 using StepsStatistic.Models;
 using StepsStatistic.Services.Abstraction;
+using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -13,6 +14,7 @@ namespace StepsStatistic.ViewModels
 
         public ICommand OpenFilesCommand { get; }
         public ICommand SaveFileCommand { get; }
+        public ChartViewModel ChartViewModel { get; }
         public ObservableCollection<UserModel> Users
         {
             get => _users;
@@ -28,17 +30,23 @@ namespace StepsStatistic.ViewModels
             set
             {
                 _selectedUser = value;
+                OnSelectedUserChanged?.Invoke(_selectedUser);
                 OnPropertyChanged();
             }
         }
 
+        public event Action<UserModel> OnSelectedUserChanged;
+
         public StatisticViewModel(
             IDialogService dialogService,
-            ISerializerService<UserModel> serializer)
+            ISerializerService<UserModel> serializer,
+            ChartViewModel chartViewModel)
         {
             _users = new ObservableCollection<UserModel>();
             OpenFilesCommand = new OpenFilesCommand(this, dialogService, serializer);
             SaveFileCommand = new SaveFileCommand(dialogService, serializer);
+            ChartViewModel = chartViewModel;
+            OnSelectedUserChanged += ChartViewModel.UpdateChart;
         }
     }
 }
