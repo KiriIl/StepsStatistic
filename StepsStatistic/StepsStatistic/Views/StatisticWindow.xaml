@@ -19,6 +19,15 @@
                   Grid.Column="0"
                   ItemsSource="{Binding Users}"
                   SelectedItem="{Binding SelectedUser}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsSpecial}" Value="true">
+                            <Setter Property="Background" Value="{StaticResource DifferResultColor}"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name"
